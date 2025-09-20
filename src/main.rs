@@ -76,7 +76,6 @@ fn main() -> zbus::Result<()> {
 
         if let Ok(upower) = UPowerProxy::new(&connection).await {
             let on_battery = upower.on_battery().await?;
-            println!("On Battery: {:?}", on_battery);
 
             // The power profile can be set via dbus
             // gdbus call --system --dest net.hadess.PowerProfiles --object-path /net/hadess/PowerProfiles --method org.freedesktop.DBus.Properties.Set 'net.hadess.PowerProfiles' 'ActiveProfile' "Performance"
@@ -86,7 +85,6 @@ fn main() -> zbus::Result<()> {
 
             while let Some(event) = stream.next().await {
                 let on_battery = event.get().await?;
-                println!("On Battery: {:?}", on_battery);
                 set_power_profile(&connection, on_battery).await?;
             }
         }
