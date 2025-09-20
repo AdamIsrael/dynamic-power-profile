@@ -1,0 +1,13 @@
+[package]
+name = "dynamic-power-profile"
+description = "A daemon that monitors your power state and automatically adjusts your power profile."
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+homepage = "https://github.com/adamisrael/dynamic-power-profile"
+repository = "https://github.com/adamisrael/dynamic-power-profile"
+
+[dependencies]
+futures = "0.3.31"
+upower_dbus = "0.3.2"
+zbus = "^3.7.0"
