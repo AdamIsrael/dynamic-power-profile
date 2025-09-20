@@ -22,8 +22,6 @@ ExecStart=/home/myuser/.cargo/bin/dynamic-power-profile
 WorkingDirectory=/home/myuser/
 Restart=on-failure
 RestartSec=5s
-User=myuser
-Group=mygroup
 
 [Install]
 WantedBy=default.target
