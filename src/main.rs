@@ -31,7 +31,6 @@ async fn has_performance_profile(connection: &Connection) -> Result<bool> {
     profiles.iter().for_each(|profile| {
         if profile.to_string().contains("performance") {
             found_profile = true;
-            return;
         }
     });
 
